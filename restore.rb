@@ -8,13 +8,17 @@
 # 
 # NOTE: will DROP a database before re-creating it. 
 
+DBUSER = ARGV[0]
+DBPASSWORD = ARGV[1]
 
-DBUSER = "dbuser"
-DBPASSWORD = "dbp"
+if DBUSER and DBPASSWORD
 
-Dir["./*.sql"].each do |file|
-  filename = File.basename(file, ".sql")
-  system("mysql -udbuser -pdbp -e 'drop database #{filename}'")
-  system("mysql -udbuser -pdbp -e 'create database #{filename}'")
-  system("mysql -udbuser -pdbp  #{filename} < #{file}'")  
+  Dir["./*.sql"].each do |file|
+    filename = File.basename(file, ".sql")
+    system("mysql -udbuser -pdbp -e 'drop database #{filename}'")
+    system("mysql -udbuser -pdbp -e 'create database #{filename}'")
+    system("mysql -udbuser -pdbp  #{filename} < #{file}'")  
+  end
+else
+  puts "Usage: mysql-restore.rb username password"
 end
