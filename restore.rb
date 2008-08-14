@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby -wKU
 
+# ================================
+# = MySQL database backup script =
+# ================================
+# 
+# Restores databases from files named [database_name].sql to a database named [database_name]
+# 
+# NOTE: will DROP a database before re-creating it. 
+
+
 DBUSER = "dbuser"
 DBPASSWORD = "dbp"
 
