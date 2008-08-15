@@ -18,6 +18,7 @@ if DBUSER and DBPASSWORD
     system("mysql -udbuser -pdbp -e 'drop database #{filename}'")
     system("mysql -udbuser -pdbp -e 'create database #{filename}'")
     system("mysql -udbuser -pdbp  #{filename} < #{file}'")  
+    puts "Restored #{filename} from #{filename}.sql"
   end
 else
   puts "Usage: mysql-restore.rb username password"
