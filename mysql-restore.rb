@@ -17,7 +17,7 @@ if DBUSER and DBPASSWORD
     filename = File.basename(file, ".sql")
     system("mysql -udbuser -pdbp -e 'drop database #{filename}'")
     system("mysql -udbuser -pdbp -e 'create database #{filename}'")
-    system("mysql -udbuser -pdbp  #{filename} < #{file}'")  
+    system("mysql -udbuser -pdbp  #{filename} < #{file}")  
   end
 else
   puts "Usage: mysql-restore.rb username password"
