@@ -1,0 +1,3 @@
+config:
+  dbuser: username_here
+  dbpassword: password_here
