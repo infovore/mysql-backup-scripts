@@ -1,1 +1,4 @@
 *.sql
+config.yml
+lists/*
+backups/*
