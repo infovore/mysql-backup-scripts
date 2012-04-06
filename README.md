@@ -8,14 +8,14 @@ Place plain text files in lists/ . Each list should contain a list of database n
 
 Then:
 
-  rake backup:list:[listname]
+    rake backup:list:[listname]
 
-will backup all those databases to @backups/[listname]/[databasename]@;
+will backup all those databases to `backups/[listname]/[databasename]`;
 
-  rake restore:list:[listname]
+    rake restore:list:[listname]
 
-will restore all the databases in @backups/[listname]@;
+will restore all the databases in `backups/[listname]`;
 
-  rake backup:list:[listname]
+    rake backup:list:[listname]
 
 will drop all the databases in that list.
